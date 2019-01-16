@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Values, Types, Operators</title>
+</head>
+
+<body>
+  <div>1. The sum of the remainder of 23 - 3 divided by 4 and 50 is?</div>
+  <div id="arithmetic"></div>
+  <div>2. Display the poem here!</div>
+  <div id="poem-back-ticks"></div>
+  <div id="poem-double-quotes"></div>
+  <div id="poem-single-quotes"></div>
+  <div>3. Who is the author of the poem?</div>
+  <input id="author-question"></input>
+  <div id="author-answer-check">No Answer Yet</div>
+  <script>
+    //do the math described in english with javascript
+    const arithmetic = (23 - 3) % 4 + 50
+    document.getElementById("arithmetic").innerHTML = arithmetic;
+
+    //demonstrate multi line strings using back ticks, then double quotes, then single quotes
+    // I'm Nobody! Who are you?
+    // Are you – Nobody – too?
+    // Then there's a pair of us!
+    // Don't tell! they'd advertise – you know!
+
+    const poemBackTicks = 
+        `I'm Nobody! Who are you?<br>
+        Are you – Nobody – too?<br>
+        Then there's a pair of us!<br>
+        Don't tell! they'd advertise – you know!`
+    document.getElementById('poem-back-ticks').innerHTML = poemBackTicks
+
+    const poemSingleQuotes = 
+        'I\'m Nobody! Who are you?<br> Are you – Nobody – too?<br> Then there\'s a pair of us!<br>Don\'t tell! they\'d advertise – you know!'
+    document.getElementById('poem-single-quotes').innerHTML = poemSingleQuotes
+
+    const poemDoubleQuotes = 
+        "I'm Nobody! Who are you?<br> Are you – Nobody – too?<br> Then there's a pair of us!<br> Don't tell! they'd advertise – you know!"
+    document.getElementById('poem-double-quotes').innerHTML = poemDoubleQuotes
+    
+    const authorQuestion = document.getElementById('author-question')
+    const authorAnswerCheck = document.getElementById('author-answer-check')
+    authorQuestion.addEventListener('blur', (event) => {
+      //use logical operators to display 'CORRECT' if the answer matches "Emily Dickinson"
+
+      // logical operators
+      // event.target.value === "Emily Dickinson" ? authorAnswerCheck.innerHTML = "CORRECT" :
+      // authorAnswerCheck.innerHTML = 'INCORRECT'
+
+      // if else
+      const answer = event.target.value
+        if (answer.toLowerCase() === 'emily dickinson') {
+            authorAnswerCheck.innerHTML = "CORRECT"
+        } else {
+            authorAnswerCheck.innerHTML = "INCORRECT"
+        }
+    })
+
+  </script>
+</body>
+
+</html>
