@@ -14,15 +14,19 @@
 
 console.log("---------looping a triangle-----------")
 
-var hash = '';
-for (var i = 0; i < 7; i++) {
+let hash = '';
+for (let i = 0; i < 7; i++) {
     hash += '#';
     console.log(hash);
 }
 
+//eloquent javascript solution
+// for (let line = "#"; line.length < 8; line += "#")
+//   console.log(line);
+
 console.log("--------------fizzbuzz----------------")
 
-for (var i = 1; i <= 100; i++){
+for (let i = 1; i <= 100; i++){
     if (i % 5 === 0 && i % 3 === 0) {
         console.log("FizzBuzz") 
     } else if (i % 3 === 0) {
@@ -34,12 +38,32 @@ for (var i = 1; i <= 100; i++){
     }
 };
 
+//eloquent javascript solution
+
+// for (let n = 1; n <= 100; n++) {
+//   let output = "";
+//   if (n % 3 == 0) output += "Fizz";
+//   if (n % 5 == 0) output += "Buzz";
+//   console.log(output || n);
+// }
+
 
 console.log("--------------chessboard----------------")
 
-var size = 8;
-var board = '';
+let size = 8; 
 
+let board = "";
+for (let y = 0; y < size; y++) {  
+  for (let x = 0; x < size; x++) {
+    if ((x + y) % 2 == 0)
+      board += " ";
+    else
+      board += "#";
+  }
+  board += "\n";
+}
+
+console.log(board);
 
 
 
